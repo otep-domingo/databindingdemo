@@ -1,0 +1,11 @@
+<h1>Simple Calculator</h1>
+<div>
+    <input type="text" id="firstnum" name="firstnum" #firstnum>
+</div>
+<div>
+    <input type="text" id="secondtnum" name="secondtnum" #secondnum>
+</div>
+<div>
+    <button type="button" (click)="setValue(firstnum.value,secondnum.value)">Sum</button>
+</div>
+<div>{{answer}}</div>

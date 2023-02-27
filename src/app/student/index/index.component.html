@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Angular CRUD Implementation</h1>
+    <a href="#" routerLink="/student/create" class="btn btn-success">Create New Student</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Student ID</td>
+                <td>Lastname</td>
+                <td>Firstname</td>
+                <td>Date Enrolled</td>
+                <td> Course</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.id}}</td>
+                <td>{{student.studentId}}</td>
+                <td>{{student.lastname}}</td>
+                <td>{{student.firstname}}</td>
+                <td>{{student.dateEnrolled}}</td>
+                <td>{{student.course}}</td>
+                <td>
+                    <a href="#" [routerLink]="['/student/',student.id,'view']" class="btn btn-info">View</a>
+                    <a href="#" [routerLink]="['/student/',student.id,'edit']" class="btn btn-primary">Edit</a>
+                    <button type="button" (click)="deleteStudent(student.id)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
