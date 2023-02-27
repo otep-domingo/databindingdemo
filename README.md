@@ -25,3 +25,34 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+##Database Required
+
+### Accounts table
+CREATE TABLE `accounts` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Username` varchar(45) DEFAULT NULL,
+  `Password` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+### Student table
+CREATE TABLE `student` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `StudentId` varchar(45) DEFAULT NULL,
+  `Lastname` varchar(45) DEFAULT NULL,
+  `Firstname` varchar(45) DEFAULT NULL,
+  `Course` varchar(45) DEFAULT NULL,
+  `DateEnrolled` date DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+### User table
+CREATE TABLE `user` (
+  `Id` int NOT NULL,
+  `Firstname` varchar(45) NOT NULL,
+  `Lastname` varchar(45) NOT NULL,
+  `Userame` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  `EnrollmentDate` datetime NOT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_
+
