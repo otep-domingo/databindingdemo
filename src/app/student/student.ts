@@ -3,6 +3,15 @@ export interface Student {
     studentId: string;
     lastname: string;
     firstname: string;
-    course: string;
+    courseName: string;
+    dateEnrolled: string;
+}
+
+export interface StudentInsert{
+    id: number;
+    studentId: string;
+    lastname: string;
+    firstname: string;
+    courseId: number;
     dateEnrolled: string;
 }

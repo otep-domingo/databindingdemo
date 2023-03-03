@@ -4,13 +4,15 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError} from 'rxjs/operators';
 
-import { Student } from './student';
+import { Student, StudentInsert } from './student';
+import { Courses } from './courses';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentService {
   private apiURL = "https://localhost:7247/api/Students/";
+  private courseUrl = "https://localhost:7247/api/Courses/"
   //define the header options
   httpOptions = {
     headers:new HttpHeaders({
@@ -27,7 +29,7 @@ export class StudentService {
   }
 
   //create method
-  create(student:Student):Observable<any>{
+  create(student:StudentInsert):Observable<any>{
     return this.httpClient.post(this.apiURL+'InsertStudent/',JSON.stringify(student),this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
@@ -56,6 +58,17 @@ export class StudentService {
       catchError(this.errorHandler)
     )
   }
+
+/////this part is for the course
+/////follow the example in getAll() for student
+
+getAllCourses():Observable<any>{
+  return this.httpClient.get(this.courseUrl + 'GetCourses')
+  .pipe(
+    catchError(this.errorHandler)
+  )
+}
+
 
   //error handler
   errorHandler(error:any){
